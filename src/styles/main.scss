@@ -1,0 +1,23 @@
+/*VARIABLES*/
+@import "./global/variables";
+
+/*EXTENDS*/
+@import "./global/extends";
+
+/*MIXINS*/
+@import "./global/mixins";
+
+/*COMPONENTS*/
+@import "./components/button";
+
+/*LAYOUTS*/
+@import "./layouts/header";
+@import "./layouts/gallery";
+@import "./layouts/card";
+
+/*FONT*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Inter', sans-serif;
+}

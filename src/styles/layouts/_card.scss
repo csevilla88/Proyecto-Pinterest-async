@@ -1,0 +1,63 @@
+
+.card {
+    width: 100%;
+    //max-width: 280px;
+    overflow: hidden;
+    height: auto;
+    break-inside: avoid;
+    cursor: pointer;
+    position: relative;
+    &.active .card_img{
+        opacity: 0.4;
+    }
+    .card_img {
+        width: 100%;
+        border-radius: $bradius;
+    }
+    .card_user {
+        @include flex-center(column, 5px);
+        position: relative;
+        top: -45px;
+        font-size: 16px;
+        
+        .card_img_user {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            @include border-color(5px, var(--avatar-color));
+        }
+        .date-upload {
+            @include flex-center(row, 8px); 
+        }
+    }
+    .card_actives{
+        position: absolute;
+        top: 0;
+        padding: 10px;
+        display: flex;
+        gap: 15px;
+        justify-content: space-between;
+        width: -webkit-fill-available;
+        height: 95%;
+    }
+        .likes, .camera {
+            @extend %card-active;
+            @include flex-center(column, 0px);
+            height: fit-content;
+            font-size: 12px;
+        }
+        .likes i{
+            color: #FF5A79;
+        }
+
+        .visit-button{
+            @include button-style(red, white);
+            position: absolute;
+            align-self: center;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+        }
+}
+
+

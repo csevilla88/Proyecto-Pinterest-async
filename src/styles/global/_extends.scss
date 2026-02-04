@@ -1,0 +1,44 @@
+ %flex {
+   gap: 24px;
+   display: flex;
+   align-items: center;
+ }
+
+%card {
+  border-radius: $bradius;
+  background-color: $bg-color;
+  overflow: hidden;
+}
+
+%primary-button {
+  background-color: $bg-color;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: $bradius;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+%lists{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+%hover-menu {
+  background-color: black;
+  color: white;
+}
+
+%card-active {
+  background-color: #E7E7E7;
+  border-radius: $bradius-cercle;
+  padding: 7px 14px;
+
+}
