@@ -1,36 +1,41 @@
-
 .card {
     width: 100%;
-    //max-width: 280px;
     overflow: hidden;
     height: auto;
     break-inside: avoid;
     cursor: pointer;
     position: relative;
-    &.active .card_img{
+    margin-bottom: 15px;
+
+    &.active .card_img {
         opacity: 0.4;
     }
+
     .card_img {
         width: 100%;
         border-radius: $bradius;
     }
+
     .card_user {
         @include flex-center(column, 5px);
         position: relative;
         top: -45px;
         font-size: 16px;
-        
+        margin-bottom: -45px;
+
         .card_img_user {
             width: 75px;
             height: 75px;
             border-radius: 50%;
             @include border-color(5px, var(--avatar-color));
         }
+
         .date-upload {
-            @include flex-center(row, 8px); 
+            @include flex-center(row, 8px);
         }
     }
-    .card_actives{
+
+    .card_actives {
         position: absolute;
         top: 0;
         padding: 10px;
@@ -40,24 +45,104 @@
         width: -webkit-fill-available;
         height: 95%;
     }
-        .likes, .camera {
-            @extend %card-active;
-            @include flex-center(column, 0px);
-            height: fit-content;
-            font-size: 12px;
-        }
-        .likes i{
-            color: #FF5A79;
-        }
 
-        .visit-button{
-            @include button-style(red, white);
-            position: absolute;
-            align-self: center;
-            left: 50%;
-            top: 40%;
-            transform: translate(-50%, -50%);
-        }
+    .likes,
+    .camera {
+        @extend %card-active;
+        @include flex-center(column, 0px);
+        height: fit-content;
+        font-size: 12px;
+    }
+
+    .likes i {
+        color: #FF5A79;
+    }
+
+    .visit-button {
+        @include button-style(red, white);
+        position: absolute;
+        align-self: center;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+    }
 }
 
+// Tablet styles
+@media (max-width: 1100px) {
+    .card {
+        .card_user {
+            top: -40px;
+            margin-bottom: -40px;
 
+            .card_img_user {
+                width: 65px;
+                height: 65px;
+                border-width: 4px;
+            }
+        }
+    }
+}
+
+// Mobile styles
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 12px;
+
+        .card_user {
+            top: -35px;
+            margin-bottom: -35px;
+            font-size: 14px;
+
+            .card_img_user {
+                width: 55px;
+                height: 55px;
+                border-width: 3px;
+            }
+
+            .date-upload {
+                font-size: 12px;
+            }
+        }
+
+        .card_actives {
+            padding: 8px;
+            gap: 10px;
+        }
+
+        .likes,
+        .camera {
+            font-size: 11px;
+            padding: 5px 10px;
+        }
+
+        .visit-button {
+            padding: 6px 16px;
+            font-size: 14px;
+        }
+    }
+}
+
+// Small mobile styles
+@media (max-width: 480px) {
+    .card {
+        margin-bottom: 15px;
+
+        .card_user {
+            top: -30px;
+            margin-bottom: -30px;
+            font-size: 13px;
+
+            .card_img_user {
+                width: 50px;
+                height: 50px;
+                border-width: 3px;
+            }
+        }
+
+        .visit-button {
+            padding: 5px 14px;
+            font-size: 13px;
+        }
+    }
+}

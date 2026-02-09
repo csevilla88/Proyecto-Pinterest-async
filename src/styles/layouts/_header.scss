@@ -1,58 +1,64 @@
-header{
+header {
     width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
     @extend %flex;
 
-    img{
+    img {
         height: 30px;
         cursor: pointer;
     }
 
-    .menu-list{
+    .menu-list {
         display: flex;
         gap: 18px;
         @extend %lists;
         padding-top: 5px;
         font-size: 24px;
     }
-        .menu-list a{
-            cursor: pointer;
-            text-decoration: none;
-            border-radius: 25px;
-            padding: 8px 16px;
-            color: $text-color;
-            &:hover{
-                @extend %hover-menu;
-            }
-        }
 
-        .input-search{
-            width: 100%;
-            border: none;
-            position: relative;
-            top: 3px;
-            background-color: #f0f0f0;
-            border-radius: 25px;
-            padding: 8px 15px;
-            font-size: 16px;
-        }
+    .menu-list a {
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 25px;
+        padding: 8px 16px;
+        color: $text-color;
 
-    .notification-nav{
+        &:hover {
+            @extend %hover-menu;
+        }
+    }
+
+    .input-search {
+        flex: 1;
+        min-width: 120px;
+        border: none;
+        position: relative;
+        top: 3px;
+        background-color: #f0f0f0;
+        border-radius: 25px;
+        padding: 8px 15px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    .notification-nav {
         @extend %lists;
         gap: 12px;
         padding-top: 5px;
 
-        i{
+        i {
             font-size: 30px;
             cursor: pointer;
             padding: 8px;
             color: rgb(121, 121, 121);
         }
 
-        li:last-child{
+        li:last-child {
             @extend %flex;
         }
 
-        .userIcon{
+        .userIcon {
             background-color: lightgrey;
             border-radius: 20px;
             cursor: pointer;
@@ -64,10 +70,69 @@ header{
     }
 }
 
-@media (max-width: 768px) {
-  header {       
-    .menu-list,.notifications, .comments  {
-        display: none;
+@media (max-width: 1100px) {
+    header {
+        gap: 15px;
+
+        .menu-list {
+            font-size: 18px;
+            gap: 10px;
+        }
+
+        .menu-list a {
+            padding: 6px 12px;
+        }
+
+        .notification-nav i {
+            font-size: 24px;
+            padding: 6px;
+        }
     }
-  }
+}
+
+@media (max-width: 768px) {
+    header {
+        gap: 10px;
+        padding: 10px 15px;
+
+        .menu-list,
+        .notifications,
+        .comments {
+            display: none;
+        }
+
+        .input-search {
+            order: 3;
+            flex-basis: 100%;
+            margin-top: 5px;
+        }
+
+        .notification-nav {
+            gap: 8px;
+
+            .user {
+                display: flex;
+            }
+
+            .userIcon {
+                padding: 5px 10px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 8px 10px;
+
+        img {
+            height: 25px;
+        }
+
+        .input-search {
+            font-size: 14px;
+            padding: 6px 12px;
+        }
+    }
 }

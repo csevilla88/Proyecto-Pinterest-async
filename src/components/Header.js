@@ -4,7 +4,7 @@ import { Gallery } from "./Gallery";
 export const Header = (onSearch) => {
     const header = document.createElement('header');
     header.className = 'header';
-    
+
     const logo = document.createElement('img');
     logo.alt = 'Logo Pinterest';
     logo.src = './src/assets/logoPinterest.png';
@@ -13,7 +13,7 @@ export const Header = (onSearch) => {
         Gallery(JSON.parse(sessionStorage.getItem("Gallery")));
     });
     header.append(logo);
-    
+
     const menuList = document.createElement('ul');
     menuList.className = 'menu-list';
     for (const item of menuItems) {
@@ -31,13 +31,13 @@ export const Header = (onSearch) => {
     inputSearch.type = 'text';
     inputSearch.placeholder = 'Buscar';
     inputSearch.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        const value = inputSearch.value.trim();
+        if (e.key === 'Enter') {
+            const value = inputSearch.value.trim();
 
-        if (!value) return;
+            if (!value) return;
 
-        onSearch(value);
-        inputSearch.value = ''; // neteja input
+            onSearch(value);
+            inputSearch.value = '';
         }
     });
     header.append(inputSearch);

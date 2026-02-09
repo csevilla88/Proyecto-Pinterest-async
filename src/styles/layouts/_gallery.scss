@@ -6,17 +6,30 @@
 }
 
 @media (max-width: 1400px) {
-  .gallery { column-count: 4; }
+  .gallery {
+    column-count: 4;
+  }
 }
 
 @media (max-width: 1100px) {
-  .gallery { column-count: 3; }
+  .gallery {
+    column-count: 3;
+    column-gap: 12px;
+  }
 }
 
 @media (max-width: 768px) {
-  .gallery { column-count: 2; }
+  .gallery {
+    column-count: 2;
+    padding: 15px;
+    column-gap: 10px;
+  }
 }
 
 @media (max-width: 480px) {
-  .gallery { column-count: 1; }
+  .gallery {
+    column-count: 1;
+    padding: 10px;
+    column-gap: 0;
+  }
 }
